@@ -8,6 +8,12 @@ const PlaceDetailScreen = props => {
         </View>
     )
 }
+PlaceDetailScreen.navigationOptions = navData => {
+    //set headerTitle based on the params I'm getting from PlaceListScreen, must use function for navData
+    return {
+        headerTitle: navData.navigation.getParam('placeTitle')
+    }
+}
 
 const styles = StyleSheet.create({})
 
