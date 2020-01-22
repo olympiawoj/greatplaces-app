@@ -5,6 +5,7 @@ import * as ImagePicker from "expo-image-picker"
 import * as Permissions from 'expo-permissions'
 
 const ImgPicker = props => {
+    const { onImageTake } = props
 
     const [pickedImage, setPickedImage] = useState()
 
@@ -30,7 +31,9 @@ const ImgPicker = props => {
             quality: 0.5
         })
         console.log(image)
+        console.log(image.uri)
         setPickedImage(image.uri)
+        onImageTake(image.uri)
     }
     return (
         <View style={styles.imagePicker}>
@@ -49,7 +52,8 @@ const ImgPicker = props => {
 
 const styles = StyleSheet.create({
     imagePicker: {
-        alignItems: 'center'
+        alignItems: 'center',
+        marginBottom: 15
     },
     imagePreview: {
         width: "100%",

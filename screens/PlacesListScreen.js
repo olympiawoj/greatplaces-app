@@ -13,16 +13,21 @@ const PlacesListScreen = props => {
             keyExtractor={item => item.id}
             renderItem={itemData =>
                 //no image or address yet so pass in null - for onSelect, go to new page after all
-                <PlaceItem onSelect={() => {
-                    //2nd arg passes params
-                    props.navigation.navigate('PlaceDetail',
-                        {
-                            placeTitle: itemData.item.title,
-                            placeId: itemData.item.id
-                        })
-                }} image={null}
+
+                <PlaceItem
+                    onSelect={() => {
+                        //2nd arg passes params
+                        props.navigation.navigate('PlaceDetail',
+                            {
+                                placeTitle: itemData.item.title,
+                                placeId: itemData.item.id
+                            })
+                    }}
+                    image={itemData.item.imageUri}
                     title={itemData.item.title}
-                    address={null} />} />
+                    address={null} />
+            }
+        />
     )
 }
 

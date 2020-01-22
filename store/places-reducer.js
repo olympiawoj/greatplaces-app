@@ -9,11 +9,14 @@ export default (state = initialState, action) => {
     switch (action.type) {
         case ADD_PLACE:
             //id is dummy id using new Date
-            const newPlace = new Place(new Date().toString(), action.placeData.title)
+            const newPlace = new Place(new Date().toString(),
+                action.placeData.title,
+                action.placeData.image)
             return {
                 ...state,
                 //concat takes array, adds new item, and returns a new array
-                places: state.places.concat(newPlace)
+                places: state.places.concat(newPlace),
+
             }
         default:
             return state
