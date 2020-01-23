@@ -5,6 +5,15 @@ import ReduxThunk from "redux-thunk"
 import { StyleSheet, Text, View } from 'react-native';
 import PlacesNavigator from "./navigation/PlacesNavigator"
 import placesReducer from "./store/places-reducer"
+import { init } from "./helpers/db"
+
+//initialize database
+init().then(() => {
+  console.log("Initialized database")
+}).catch(err => {
+  console.log("Initializing db failed")
+  console.log(err)
+})
 
 //create our root reducer with combineReducer
 const rootReducer = combineReducers({
