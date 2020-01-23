@@ -1,6 +1,6 @@
 # The Great Places App 
 
-A Great Places app built with React Native
+🌅 A Great Places app built with React Native
 
 
 ## Table of Contents
