@@ -9,7 +9,8 @@ export default (state = initialState, action) => {
     switch (action.type) {
         case ADD_PLACE:
             //id is dummy id using new Date
-            const newPlace = new Place(new Date().toString(),
+            const newPlace = new Place(
+                action.placeData.id.toString(),
                 action.placeData.title,
                 action.placeData.image)
             return {
