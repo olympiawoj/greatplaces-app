@@ -1,8 +1,9 @@
 import React, { useState } from "react"
 //Button allows us to start getting user location, text for default text
-import { View, Button, Text, ActivityIndicator, Alert, StyleSheet } from "react-native"
+import { View, Button, Text, ActivityIndicator, Alert, StyleSheet, Image } from "react-native"
 import * as Location from 'expo-location'
 import * as Permissions from 'expo-permissions'
+import MapPreview from "./MapPreview"
 
 import Colors from "../constants/Colors"
 
@@ -32,11 +33,12 @@ const LocationPicker = props => {
         try {
             setIsFetching(true)
             const location = await Location.getCurrentPositionAsync({ timeout: 5000 });
-            console.log(location)
+            console.log('coords', location.coords)
             setPickedLocation({
                 lat: location.coords.latitude,
                 lng: location.coords.longitude
             })
+            console.log('thisi s the picked location', pickedLocation)
 
         } catch (error) {
             Alert.alert('Could not fetch location!', 'Please try again later or pick a location on the map.', [{ text: "Okay!" }])
@@ -47,9 +49,11 @@ const LocationPicker = props => {
 
     return (
         <View style={styles.locationPicker}>
-            <View style={styles.mapPreview}>
+            <MapPreview style={styles.mapPreview} location={pickedLocation}>
                 {isFetching ? <ActivityIndicator size='large' color={Colors.primary} /> : <Text>No location chosen yet!</Text>}
-            </View>
+
+            </MapPreview>
+
             <Button title="Get User Location" color={Colors.primary} onPress={getLocationHandler} />
         </View>
     )
@@ -66,9 +70,6 @@ const styles = StyleSheet.create({
         height: 150,
         borderColor: "#ccc",
         borderWidth: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
-
     }
 })
 
