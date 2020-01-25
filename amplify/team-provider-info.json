@@ -1,0 +1,15 @@
+{
+    "gpatesting": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-great-places-app-gpatesting-135656-authRole",
+            "UnauthRoleArn": "arn:aws:iam::425378036154:role/amplify-great-places-app-gpatesting-135656-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::425378036154:role/amplify-great-places-app-gpatesting-135656-authRole",
+            "Region": "us-east-2",
+            "DeploymentBucketName": "amplify-great-places-app-gpatesting-135656-deployment",
+            "UnauthRoleName": "amplify-great-places-app-gpatesting-135656-unauthRole",
+            "StackName": "amplify-great-places-app-gpatesting-135656",
+            "StackId": "arn:aws:cloudformation:us-east-2:425378036154:stack/amplify-great-places-app-gpatesting-135656/839df360-3e1a-11ea-83a4-02c25da8714e",
+            "AmplifyAppId": "d2vf5dyebbgv62"
+        }
+    }
+}
