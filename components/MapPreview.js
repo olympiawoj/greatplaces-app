@@ -1,11 +1,11 @@
 import React from "react"
 
-import { Image, StyleSheet, View, Text } from "react-native"
+import { Image, StyleSheet, TouchableOpacity, Text } from "react-native"
 import ENV from "../env"
 
 
 const MapPreview = (props) => {
-    const { location, children, style } = props
+    const { location, children, style, onPress } = props
     //generate image preview URL
     let imagePreviewUrl
 
@@ -17,11 +17,11 @@ const MapPreview = (props) => {
 
     return (
         //let's you set styles outside and merge them
-        <View style={{
+        <TouchableOpacity onPress={onPress} style={{
             ...styles.mapPreview, ...style
         }}>
             {location ? <Image style={styles.mapImage} source={{ uri: imagePreviewUrl }} /> : children}
-        </View >
+        </TouchableOpacity >
     )
 }
 
