@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 //Button allows us to start getting user location, text for default text
 import { View, Button, Text, ActivityIndicator, Alert, StyleSheet, Image } from "react-native"
 import * as Location from 'expo-location'
@@ -10,6 +10,14 @@ import Colors from "../constants/Colors"
 const LocationPicker = props => {
     const [isFetching, setIsFetching] = useState(false)
     const [pickedLocation, setPickedLocation] = useState()
+
+    const mapPickedLocation = props.navigation.getParam('pickedLocation')
+
+    useEffect(() => {
+        if (mapPickedLocation) {
+            setPickedLocation(mapPickedLocation)
+        }
+    }, [mapPickedLocation])
 
     const verifyPermissions = async () => {
         const result = await Permissions.askAsync(Permissions.LOCATION)
