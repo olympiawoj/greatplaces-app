@@ -27,14 +27,6 @@ const MapScreen = props => {
         })
     }
 
-    let markerCoordinates;
-    if (selectedLocation) {
-        markerCoordinates = {
-            latitude: selectedLocation.lat,
-            longitude: selectedLocation.lng
-        }
-    }
-
     const savePickedLocationHandler = useCallback(() => {
         if (!selectedLocation) {
             //Could show an alert
@@ -49,6 +41,16 @@ const MapScreen = props => {
         props.navigation.setParams({ saveLocation: savePickedLocationHandler })
     }, [savePickedLocationHandler])
 
+
+
+    let markerCoordinates;
+    if (selectedLocation) {
+        markerCoordinates = {
+            latitude: selectedLocation.lat,
+            longitude: selectedLocation.lng
+        }
+    }
+
     return (
         <MapView style={styles.map} region={mapRegion} onPress={selectLocationHandler} >
 
@@ -62,6 +64,7 @@ MapScreen.navigationOptions = navData => {
     const saveFn = navData.navigation.getParam('saveLocation')
     const readonly = navData.navigation.getParam('readonly')
     if (readonly) {
+        console.log()
         return {}
     }
     return {
@@ -82,7 +85,7 @@ const styles = StyleSheet.create({
     },
     headerButtonText: {
         fontSize: 16,
-        color: Platform.OS === "Android" ? "white" : Colors.primary
+        color: Platform.OS === "android" ? "white" : Colors.primary
     }
 
 })
