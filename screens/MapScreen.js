@@ -64,7 +64,6 @@ MapScreen.navigationOptions = navData => {
     const saveFn = navData.navigation.getParam('saveLocation')
     const readonly = navData.navigation.getParam('readonly')
     if (readonly) {
-        console.log()
         return {}
     }
     return {
