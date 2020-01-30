@@ -29,7 +29,6 @@ const NewPlaceScreen = props => {
     }
 
     const locationPickedHandler = useCallback(location => {
-        console.log('locatino in locationPickedHandler', location)
         setSelectedLocation(location)
     }, [])
 

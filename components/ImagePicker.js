@@ -30,8 +30,7 @@ const ImgPicker = props => {
             aspect: [16, 9],
             quality: 0.5
         })
-        console.log(image)
-        console.log(image.uri)
+
         setPickedImage(image.uri)
         onImageTake(image.uri)
     }

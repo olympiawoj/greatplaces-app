@@ -17,7 +17,7 @@ const MapScreen = props => {
     }
 
     const selectLocationHandler = event => {
-        console.log(event)
+
         if (readonly) {
             return;
         }

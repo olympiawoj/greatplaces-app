@@ -4,7 +4,7 @@ import Colors from "../constants/Colors"
 
 const PlaceItem = props => {
     const { onSelect, address, title, image } = props
-    console.log('this is the image in plcaeItem', image)
+
     return (
         <TouchableOpacity onPress={onSelect} style={styles.placeItem}>
 
