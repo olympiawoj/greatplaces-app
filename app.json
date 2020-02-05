@@ -27,7 +27,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregounrdImage": "./assets/places-adaptive.png",
+        "foregroundImage": "./assets/places-adaptive.png",
         "backgroundColor": "#171717"
       }
     }
