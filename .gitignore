@@ -3,7 +3,7 @@ node_modules/**/*
 npm-debug.*
 *.jks
 *.p8
-*.p12
+*.p12masteras
 *.key
 *.mobileprovision
 *.orig.*
